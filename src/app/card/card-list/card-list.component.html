@@ -1,0 +1,5 @@
+<div class="row my-3">
+    <div *ngFor="let item of cardList | async" class="col">
+        <app-item-card [data]="item"></app-item-card>
+    </div>
+</div>

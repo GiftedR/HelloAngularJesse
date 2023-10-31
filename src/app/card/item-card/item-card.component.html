@@ -1,0 +1,11 @@
+<div class="card">
+    <img class="card-img-top" [src]="data.image" />
+    <div class="card-body text-center">
+        <h5 class="card-title">{{ data.title }}</h5>
+        <p class="card-text">
+            {{ data.shortDescription }}
+        </p>
+        <a class="btn btn-primary p-3" [routerLink]="data.link">View Game Page!</a>
+    </div>
+</div>
+
