@@ -3,9 +3,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ItemComponent } from './item/item.component';
+import { GameDetailComponent } from './game-detail/game-detail.component';
 
 const routes: Routes = [
   { path: "", pathMatch: 'full', component: HomeComponent},
+  { path: "games/:id", component: GameDetailComponent },
   { path: "item", component: ItemComponent}
 ];
 

@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ItemCardComponent } from './card/item-card/item-card.component';
 import { CardListComponent } from './card/card-list/card-list.component';
 import { DataService } from './data.service';
+import { GameDetailComponent } from './game-detail/game-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DataService } from './data.service';
     ItemComponent,
     NavbarComponent,
     ItemCardComponent,
-    CardListComponent
+    CardListComponent,
+    GameDetailComponent
   ],
   imports: [
     BrowserModule,
