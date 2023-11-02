@@ -5,6 +5,6 @@
         <p class="card-text">
             {{ data.shortDescription }}
         </p>
-        <a class="btn btn-primary p-3" [routerLink]="data.link">View Game Page!</a>
+        <a class="btn btn-primary p-3" [routerLink]="['games', data.title]">View Game Page!</a>
     </div>
 </div>
