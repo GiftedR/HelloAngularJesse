@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+/*
+Midnight green - #003638
+Atomic Tangerine - #f2a183
+White - #fff
+*/
+
+$body-bg-dark: #003638;
+$body-tertiary-bg-dark: #f2a183;
+$body-emphasis-color-dark: #000;
+$primary: #f2a183;
+$secondary: #003638;
+
+@import '../node_modules/bootstrap/scss/bootstrap';

@@ -1,1 +1,45 @@
-<p>game-detail works!</p>
+<div class="container-fluid text-center">
+    <div class="row row-cols-1 gy-2">
+        <div class="col">
+            <span class="fs-1">{{game.title}}</span>
+        </div>
+        <div class="col">
+            <div class="container-fluid ratio ratio-21x9">
+                <img [src]="game.image" [alt]="game.shortDescription" class="object-fit-cover w-100"  style="object-position: 80% 90%;" />
+            </div>
+        </div>
+        <div class="col">
+            <a href="https://store.steampowered.com" target="_new" class="btn btn-primary fs-3 p-3 m-3">Checkout on Steam!</a>
+        </div>
+    </div>
+</div>
+<app-callout>{{ game.description }}</app-callout>
+<div class="container text-center">
+    <div class="row">
+        <div class="col" *ngFor="let feature of game.features">
+            <div class="card mb-3 bg-primary text-white">
+                <img class="card-img-top" [src]="feature.image" />
+                <div class="card-body text-center bg-secondary">
+                    <h5 class="card-title">{{ feature.name }}</h5>
+                    <p class="card-text">
+                        {{ feature.description }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-callout>
+    <app-wishlist [gameId]="id" [gameTitle]="this.game.title"></app-wishlist>
+</app-callout>
+
+<app-callout>
+    <h1>Admin Edit:</h1>
+    <div class="btn-group">
+        <button class="btn btn-secondary" (click)="editGame()">Edit</button>
+        <button class="btn btn-danger" (click)="deleteGame()">Delete</button>
+    </div>
+</app-callout>
+
+<!-- <pre> {{ this.game | json }} </pre> -->

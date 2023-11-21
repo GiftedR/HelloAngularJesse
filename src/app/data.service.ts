@@ -21,14 +21,20 @@ export class DataService {
     });
   }
 
-  getOneGameByID(id: string): void {
-    this.http.get<any[]>(`${this.baseURL}/games/${id}`).subscribe(result => {
-      console.log("get all games at service", result);
-      this.games$.next(result);
-    });
+  getOneGameByID(id: string): Observable<any> {
+    return this.http.get<any[]>(`${this.baseURL}/games/${id}`);
   }
   //Get one by ID
   //Create New
+  createGame(game: any): void{
+    this.http.post<any>(`${this.baseURL}/games`, game).subscribe(result => {
+      this.getAllGames();
+    });
+  }
+
   //Update Existing
   //Delete by ID
+  deleteGame(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.baseURL}/games/${id}`);
+  }
 }
