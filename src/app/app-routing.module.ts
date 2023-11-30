@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: "", pathMatch: 'full', component: HomeComponent},
   { path: "games/create", component: GameEditComponent },
   { path: "games/:id", component: GameDetailComponent },
+  { path: "games/:id/edit", component: GameEditComponent },
   { path: "item", component: ItemComponent}
 ];
 

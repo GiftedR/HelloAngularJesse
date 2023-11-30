@@ -27,10 +27,43 @@
                     <label class="form-label">Image:</label>
                     <input type="text" class="form-control" formControlName="image"/>
                 </div>
-                <div>
-                    <button class="btn btn-primary my-2">Submit</button>
+                <!-- Dynamic Card Features -->
+                <div class="row">
+                    <div class="btn btn-primary m-2" (click)="addNewFeature()">add New Feature</div>
+                </div>
+                <div class="row" formArrayName="features">
+                    <div class="col border border-primary rounded m-1" *ngFor="let feature of features.controls; let i = index" [formGroupName]="i">
+                        <div>
+                            <label class="form-label">Feature Name</label>
+                            <input type="text" class="form-control border-primary-subtle" formControlName="name">
+                        </div>
+                        <div>
+                            <label class="form-label">Description</label>
+                            <input type="text" class="form-control border-primary-subtle" formControlName="description">
+                        </div>
+                        <div>
+                            <label class="form-label">Feature Image</label>
+                            <input type="text" class="form-control border-primary-subtle" formControlName="image">
+                        </div>
+                        <div>
+                            <label class="form-label">Feature ID</label>
+                            <input [disabled]="true" type="text" class="form-control border-primary-subtle" formControlName="gameFeatureId">
+                        </div>
+                        <div>
+                            <label class="form-label">Game ID</label>
+                            <input [disabled]="true" type="text" class="form-control border-primary-subtle" formControlName="gameId">
+                        </div>
+                        <div class="btn btn-danger my-2" (click)="removeFeature(i)">DeYeet Feature</div>
+                    </div>
+                </div>
+                <!-- End Dynamic Card Features -->
+                <div class="my-2">
+                    <button class="btn btn-primary">Submit</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<pre> {{ id | json }} </pre>
+<pre> {{ gameForm.value | json }} </pre>

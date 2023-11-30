@@ -37,9 +37,9 @@ export class GameDetailComponent implements OnInit {
     //   console.log(result);
     // });
   }
-
+  
   editGame(): void {
-
+    this.router.navigate(['games', this.id, 'edit']);
   }
 
   deleteGame(): void{
